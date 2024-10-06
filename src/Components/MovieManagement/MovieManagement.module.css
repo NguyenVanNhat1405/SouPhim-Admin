@@ -1,0 +1,119 @@
+.movieManagement {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #2c2c2c;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #feca57;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.searchInput {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid #54a0ff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #3a3a3a;
+  color: #fff;
+}
+
+.sortButtons {
+  display: flex;
+  justify-content: center; /* Căn giữa các nút */
+  margin-bottom: 20px; /* Khoảng cách phía dưới */
+}
+
+.sortButton {
+  background-color: #feca57; /* Màu nền giống như theme */
+  color: #2c2c2c; /* Màu chữ */
+  border: none; /* Không viền */
+  border-radius: 5px; /* Bo góc */
+  padding: 10px 15px; /* Khoảng cách bên trong */
+  margin: 0 10px; /* Khoảng cách giữa các nút */
+  cursor: pointer; /* Hiển thị con trỏ chuột khi hover */
+  font-weight: bold; /* Chữ đậm */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Hiệu ứng chuyển động */
+}
+
+/* Hiệu ứng khi hover */
+.sortButton:hover {
+  background-color: #ffb74d; /* Màu nền khi hover */
+  transform: scale(1.05); /* Tăng nhẹ kích thước khi hover */
+}
+
+
+.movieTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.movieTable th, .movieTable td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+
+.movieTable th {
+  background-color: #3a3a3a;
+  color: #feca57;
+}
+
+.movieTable td {
+  background-color: #2c2c2c;
+  color: #dcdcdc;
+}
+
+.moviePoster {
+  width: 100px;
+  height: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.moviePoster:hover {
+  transform: scale(1.05);
+}
+
+.deleteButton {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.deleteButton:hover {
+  background-color: #ff4d4d;
+}
+
+@media (max-width: 768px) {
+  .sortButtons {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .sortButton {
+      margin: 5px 0;
+      width: 100%;
+      max-width: 200px;
+  }
+
+  .searchInput {
+      width: 100%;
+      max-width: 100%;
+  }
+}

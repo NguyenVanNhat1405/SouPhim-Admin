@@ -1,0 +1,62 @@
+.dashboard {
+  display: flex;
+  background-color: #2c2c2c;
+  min-height: 100vh;
+  color: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #3a3a3a;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar h1 {
+  text-align: center;
+  color: #feca57;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px; /* Tăng padding để tạo không gian thoáng hơn */
+  margin-bottom: 15px;
+  border-radius: 8px; /* Làm tròn các góc để mềm mại hơn */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Thêm hiệu ứng chuyển động */
+  color: #f5f5f5; /* Màu chữ mặc định */
+}
+
+.item img {
+  width: 28px; /* Kích thước biểu tượng lớn hơn một chút */
+  height: 28px; /* Kích thước biểu tượng lớn hơn một chút */
+  margin-right: 10px;
+}
+
+.item p {
+  margin: 0;
+  font-weight: 500; /* Độ dày chữ đậm hơn để nổi bật hơn */
+}
+
+/* Hiệu ứng khi hover */
+.item:hover {
+  background-color: #444; /* Màu nền khi hover */
+  transform: scale(1.02); /* Tăng nhẹ kích thước item khi hover */
+  cursor: pointer; /* Hiển thị con trỏ chuột khi hover */
+}
+
+.item.active {
+  background-color: #feca57; /* Màu nền cho item đang hoạt động */
+  color: #2c2c2c; /* Màu chữ khi hoạt động */
+  font-weight: bold; /* Làm chữ đậm khi hoạt động */
+}
+
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
