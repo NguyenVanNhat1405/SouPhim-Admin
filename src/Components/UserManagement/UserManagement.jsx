@@ -25,15 +25,20 @@ const UserManagement = () => {
   // Function to delete user
   const handleDelete = async (userId) => {
     try {
-      // Optimistically update the state
+      // Cập nhật giao diện trước khi gọi API
       setUsers(prevUsers => prevUsers.filter(user => user._id !== userId));
-      
+  
+      // Gọi API để xóa người dùng
       await axios.delete(`http://localhost:5000/api/auth/delete/${userId}`);
+  
+      console.log('Người dùng đã bị xóa');
     } catch (error) {
       console.error('Failed to delete user:', error);
-      // Optionally, you could refetch users or show an error message here
     }
   };
+  
+
+  
 
   if (loading) {
     return <p>Loading users...</p>; // Show loading state

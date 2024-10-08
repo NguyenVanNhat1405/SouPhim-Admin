@@ -29,26 +29,21 @@ const CommentManagement = () => {
     );
 
     const handleDelete = async (commentId) => {
-        const token = Cookies.get('token'); // Lấy token từ cookie
-        console.log('Token:', token); // Log token để kiểm tra
-    
-        try {
-            const response = await axios.delete(`http://localhost:5000/api/comments/admin/delete/${commentId}`, {
-                headers: {
-                    Authorization: `Bearer ${token}`, // Gửi token trong header
-                },
-            });
-    
-            // Kiểm tra phản hồi từ API
-            if (response.status === 200) {
-                setComments(comments.filter(comment => comment._id !== commentId)); // Cập nhật danh sách bình luận
-            } else {
-                console.error('Failed to delete comment:', response.data);
-            }
-        } catch (error) {
-            console.error('Failed to delete comment:', error);
+    try {
+        // Gọi API để xóa bình luận mà không cần token
+        const response = await axios.delete(`http://localhost:5000/api/comments/admin/delete/${commentId}`);
+
+        // Kiểm tra phản hồi từ API
+        if (response.status === 200) {
+            setComments(comments.filter(comment => comment._id !== commentId)); // Cập nhật danh sách bình luận
+        } else {
+            console.error('Failed to delete comment:', response.data);
         }
-    };
+    } catch (error) {
+        console.error('Failed to delete comment:', error);
+    }
+};
+
     
     
     

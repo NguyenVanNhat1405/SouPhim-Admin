@@ -22,12 +22,12 @@ const RatingManagement = () => {
   // Hàm để xóa rating
   const handleDelete = async (ratingId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/admin/ratings/${ratingId}`);
-      setRatings(ratings.filter(rating => rating.id !== ratingId)); // Cập nhật danh sách rating sau khi xóa
+      await axios.delete(`http://localhost:5000/api/ratings/admin/delete/${ratingId}`); 
+      setRatings(ratings.filter(rating => rating._id !== ratingId)); // Cập nhật danh sách rating sau khi xóa
     } catch (error) {
       console.error('Failed to delete rating:', error);
-    }
-  };
+    } 
+};
 
   return (
     <div className={styles.ratingManagement}>
@@ -54,7 +54,7 @@ const RatingManagement = () => {
                 <td>{rating.rating} / 10</td>
                 <td>{new Date(rating.createdAt).toLocaleDateString()}</td>
                 <td>
-                  <button onClick={() => handleDelete(rating.id)} className={styles.deleteButton}>
+                  <button onClick={() => handleDelete(rating._id)} className={styles.deleteButton}>
                     Xóa
                   </button>
                 </td>
